@@ -8,7 +8,6 @@ on:
 
 jobs:
   build:
-		
     runs-on: ubuntu-latest
 
     steps:
@@ -28,5 +27,11 @@ jobs:
           npm run export
           touch out/.nojekyll
 
+ 
+ # snip
       - name: Deploy
-        # configure an external GitHub Pages deploy workflow here
+        # https://github.com/JamesIves/github-pages-deploy-action
+        uses: JamesIves/github-pages-deploy-action@4.4.0 
+        with:
+          branch: main
+          folder: src
